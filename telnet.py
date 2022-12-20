@@ -9,12 +9,12 @@ passwd = getpass.getpass()
 
 tnet = telnetlib.Telnet(target)
 
-tn.read_until(b"Username: ")
-tn.write(user.encode('ascii') + b"\n")
+tnet.read_until(b"Username: ")
+tnet.write(user.encode('ascii') + b"\n")
 
 if passwd:
-    tn.read_until(b"Password: ")
-    tn.write(passwd.encode('ascii') + b"\n")
+    tnet.read_until(b"Password: ")
+    tnet.write(passwd.encode('ascii') + b"\n")
 
 # write your cisco ios commands in between the quotation marks before the \n
 
